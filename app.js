@@ -6,7 +6,7 @@ const LOAD_MORE_BTN = document.getElementById('load-more-btn');
 const LOAD_MORE_CONTAINER = document.getElementById('load-more-container');
 
 const GNEWS_SEARCH_URL = 'https://gnews.io/api/v4/search';
-const API_KEY = 'YOUR_API_KEY_HERE';
+const API_KEY = '4d934719b21985b84e8093ffbb6b97c8';
 
 let currentCategory = 'general';
 let allArticles = [];
