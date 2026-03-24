@@ -6,7 +6,7 @@ const LOAD_MORE_BTN = document.getElementById('load-more-btn');
 const LOAD_MORE_CONTAINER = document.getElementById('load-more-container');
 
 const GNEWS_SEARCH_URL = 'https://gnews.io/api/v4/search';
-const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+const CORS_PROXY = 'https://corsproxy.io/?';
 const API_KEY = 'f7dd3bdfc7d0be7ad387c9ac52032fc1';
 
 let currentCategory = 'general';
