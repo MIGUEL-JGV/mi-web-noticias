@@ -7,7 +7,7 @@ const LOAD_MORE_CONTAINER = document.getElementById('load-more-container');
 
 const GNEWS_SEARCH_URL = 'https://gnews.io/api/v4/search';
 const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
-const API_KEY = '4d934719b21985b84e8093ffbb6b97c8';
+const API_KEY = 'YOUR_API_KEY_HERE';
 
 let currentCategory = 'general';
 let allArticles = [];
