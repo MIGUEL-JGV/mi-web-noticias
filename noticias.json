@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Ejemplo de noticia 1: Tecnología en auge",
+    "description": "Las últimas innovaciones tecnológicas están transformando nuestra vida diaria de maneras nunca antes vistas. Expertos predicen un futuro brillante para la inteligencia artificial.",
+    "content": "Contenido completo de la noticia de ejemplo...",
+    "url": "https://ejemplo.com/noticia-1",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600",
+    "publishedAt": "2026-03-23T10:00:00Z",
+    "source": {
+      "name": "Tech News",
+      "url": "https://ejemplo.com"
+    },
+    "author": "Juan Pérez"
+  },
+  {
+    "title": "Ejemplo de noticia 2: Deportes locales",
+    "description": "El equipo local conquista el campeonato regional tras una final emocionante. Los aficionados celebraron toda la noche en las calles del centro.",
+    "content": "Contenido completo de la noticia de ejemplo...",
+    "url": "https://ejemplo.com/noticia-2",
+    "image": "https://images.unsplash.com/photo-1461896836934-fffcfb5e5555?w=600",
+    "publishedAt": "2026-03-22T18:30:00Z",
+    "source": {
+      "name": "N/A",
+      "url": "https://deportes.com"
+    },
+    "author": "na"
+  }
+]

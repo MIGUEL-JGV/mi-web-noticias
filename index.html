@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal de noticias actualizado automáticamente con las últimas noticias en español">
+    <title>Mi Web de Noticias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">📰 Mi Web de Noticias</h1>
+            <p class="header__subtitle">Últimas noticias actualizadas automáticamente</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div id="error-message" class="error-message" style="display: none;">
+                <p>⚠️ No se pudieron cargar las noticias. Intenta nuevamente más tarde.</p>
+            </div>
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Cargando noticias...</p>
+            </div>
+            <div id="news-grid" class="news-grid"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Mi Web de Noticias. Noticias proporcionadas por GNews API.</p>
+            <p class="footer__update">Última actualización: <span id="last-update">-</span></p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
