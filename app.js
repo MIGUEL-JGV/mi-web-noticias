@@ -316,7 +316,7 @@ async function loadNewsFromAPI(apiKey, category = 'general', page = 1, append = 
     });
 
     try {
-        const response = await fetch(`${GNEWS_SEARCH_URL}?${params}`);
+        const response = await fetch(`${CORS_PROXY}${encodeURIComponent(GNEWS_SEARCH_URL + '?' + params)}`);
         
         if (!response.ok) {
             if (response.status === 403) {
