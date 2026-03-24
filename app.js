@@ -6,6 +6,7 @@ const LOAD_MORE_BTN = document.getElementById('load-more-btn');
 const LOAD_MORE_CONTAINER = document.getElementById('load-more-container');
 
 const GNEWS_SEARCH_URL = 'https://gnews.io/api/v4/search';
+const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
 const API_KEY = '4d934719b21985b84e8093ffbb6b97c8';
 
 let currentCategory = 'general';
@@ -272,9 +273,18 @@ function renderNews(articles, append = false) {
 function handleError(error) {
     console.error('Error al cargar noticias:', error);
     LOADING.style.display = 'none';
-    const errorText = error.message.includes('429') 
-        ? 'Límite de solicitudes alcanzado. Obtén una API key gratuita en gnews.io'
-        : `Error al cargar noticias: ${error.message}`;
+    let errorText = 'Error al cargar noticias.';
+    
+    if (error.message.includes('429')) {
+        errorText = 'Límite de solicitudes alcanzado. Espera un momento.';
+    } else if (error.message.includes('403')) {
+        errorText = 'API key inválida.';
+    } else if (error.message.includes('Failed to fetch') || error.message.includes('Load failed')) {
+        errorText = 'Error de conexión. Verifica tu conexión a internet.';
+    } else if (error.message) {
+        errorText = `Error: ${error.message}`;
+    }
+    
     ERROR_MESSAGE.querySelector('p').textContent = errorText;
     ERROR_MESSAGE.style.display = 'block';
 }
