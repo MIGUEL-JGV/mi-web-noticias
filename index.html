@@ -4,10 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portal de noticias actualizado automáticamente con las últimas noticias en español">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Mi Web de Noticias">
+    <meta property="og:description" content="Portal de noticias actualizado automáticamente con las últimas noticias en español">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200">
+    <meta property="og:url" content="https://miguel-jgv.github.io/mi-web-noticias/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mi Web de Noticias">
+    <meta name="twitter:description" content="Portal de noticias actualizado automáticamente con las últimas noticias en español">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200">
+    
     <title>Mi Web de Noticias</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button id="theme-toggle" class="theme-toggle" title="Cambiar tema">
+        <span id="theme-icon">🌙</span>
+    </button>
+
     <header class="header">
         <div class="container">
             <h1 class="header__title">📰 Mi Web de Noticias</h1>
@@ -45,8 +63,12 @@
             <div id="error-message" class="error-message" style="display: none;">
                 <p>⚠️ No se pudieron cargar las noticias. Intenta nuevamente más tarde.</p>
             </div>
-            <div id="loading" class="loading">
-                <div class="spinner"></div>
+            <div id="loading" class="loading" style="display: none;">
+                <div class="skeleton-grid">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
                 <p>Cargando noticias...</p>
             </div>
             <div id="news-grid" class="news-grid"></div>
@@ -55,6 +77,8 @@
             </div>
         </div>
     </main>
+
+    <button id="back-to-top" class="back-to-top">↑</button>
 
     <footer class="footer">
         <div class="container">
@@ -77,11 +101,32 @@
                 <p>Cargando contenido completo...</p>
             </div>
             <div id="modal-content" class="modal__text" style="display: none;"></div>
+            <div class="modal__actions">
+                <button id="share-btn" class="modal__share-btn" title="Compartir">
+                    <span>📤</span> Compartir
+                </button>
+                <button id="favorite-btn" class="modal__favorite-btn" title="Guardar en favoritos">
+                    <span id="favorite-icon">🤍</span> Favorito
+                </button>
+            </div>
             <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer" class="modal__link" style="display: none;">
                 Leer noticia completa en la fuente
             </a>
         </div>
     </div>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <div id="favorites-panel" class="favorites-panel">
+        <div class="favorites-panel__header">
+            <h3>❤️ Mis Favoritos</h3>
+            <button id="close-favorites" class="favorites-panel__close">&times;</button>
+        </div>
+        <div id="favorites-list" class="favorites-panel__list"></div>
+        <button id="clear-favorites" class="favorites-panel__clear">Limpiar favoritos</button>
+    </div>
+
+    <button id="favorites-toggle" class="favorites-toggle">❤️</button>
 
     <script src="app.js"></script>
 </body>
