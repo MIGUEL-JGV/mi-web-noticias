@@ -1,0 +1,32 @@
+name: Actualizar Noticias Diarias
+
+on:
+  schedule:
+    # Se ejecuta cada 4 horas (sintaxis Cron)
+    - cron: '0 */4 * * *'
+  workflow_dispatch: # Te permite ejecutarlo manualmente con un botón desde GitHub
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Ejecutar script de extracción
+        run: python actualizar_noticias.py
+
+      - name: Subir el nuevo JSON al repositorio
+        run: |
+          git config --global user.name 'GitHub Action Bot'
+          git config --global user.email 'action@github.com'
+          git commit -am "Actualización automática de noticias.json" || exit 0
+          git push
