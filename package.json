@@ -1,0 +1,15 @@
+{
+  "name": "mi-web-noticias",
+  "version": "1.0.0",
+  "description": "Portal de noticias con GNews API",
+  "scripts": {
+    "build": "mkdir -p dist && cp -r *.html *.css *.js dist/ && cp -r images dist/ 2>/dev/null || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anonymouz/mi-web-noticias.git"
+  },
+  "keywords": ["news", "gnews", "api"],
+  "author": "",
+  "license": "ISC"
+}
